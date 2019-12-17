@@ -28,7 +28,8 @@
     where the difference between every call is the mood value! 
     we send it time with value 0,and the other with value 1
     
-   we initialize the CountDownLatch class with the number of tasks we are going to execute in the executor. The main thread calls the await() method and every task, when it finishes its calculation, calls the getDown() method
+    we initialize the countDownLatch class with the number of tasks we are going to execute in the executor.
+    The main thread calls the await() method and every task, when it finished its calculation, calls the getDown() method
    
     In the task class:
     -when mood=0:
