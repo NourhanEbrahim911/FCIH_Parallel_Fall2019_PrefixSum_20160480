@@ -20,6 +20,23 @@
     We have implemented the parallel algorithm in coarse-grained concurrent version 
     Firstly, we’ve implemented it in class (ParallelPrefixSum) .. we intialized the array and printed the result in it.
     We called our ParallelGroup class and passed to it the number of elements in the array and the array it self.
-    #In# the PrallelGroup class:
+    In the PrallelGroup class:
     we have the Inarr which is the array itself,Outarr which will contain our output,Thrnum which is the number of threads,the   executor,elemNum,the prefixSumArr which will be an array with the same number of elements , firstIndex which is zero by default, lastIndex which is the last element's index
-    Inside the ParallelGroup class,we call the 
+    Inside the ParallelGroup class,we call the Task class twice inside a loop and call the executor
+    the parameters are (firstIndex ,lastIndex ,n,i,mood,Inarr,Outarr,PrefixSumArr,endControler)
+    
+    where the difference between every call is the mood value! 
+    we send it time with value 0,and the other with value 1
+    
+   we initialize the CountDownLatch class with the number of tasks we are going to execute in the executor. The main thread calls the await() method and every task, when it finishes its calculation, calls the getDown() method
+   
+    In the task class:
+    -when mood=0:
+    it produces the prefixSum of the sent subArrays in the OutputArr variable
+    changes the value of PrefixSumArr to the greatest values in the outputArr
+    
+    -when mood=1:
+    it takes the outputArr as an input, and returns the value of the needed prefexSum!
+    
+    
+    finally,the value is stored in the res variable in main and will be printed using for loop
