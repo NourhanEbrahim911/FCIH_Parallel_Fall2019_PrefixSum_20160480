@@ -20,5 +20,5 @@
     We have implemented the parallel algorithm in coarse-grained concurrent version 
     Firstly, we’ve implemented it in class (ParallelPrefixSum) .. we intialized the array and printed the result in it.
     We called our ParallelGroup class and passed to it the number of elements in the array and the array it self.
-    **In the PrallelGroup class:**
+    __In the PrallelGroup class:__
     we have the Inarr which is the array itself,Outarr which will contain our output,Thrnum which is the number of threads,the executor,elemNum,the prefixSumArr which will be an array with the same number of elements , firstIndex which is zero by default, lastIndex which is the last element's index
